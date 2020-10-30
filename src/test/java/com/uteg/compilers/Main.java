@@ -1,5 +1,6 @@
 package com.uteg.compilers;
 
+import com.uteg.compilers.validations.PrimitiveDataTypes.NumbersValidation;
 import com.uteg.compilers.validations.ReservedWordsValidation;
 import com.uteg.compilers.validations.basic_operators.*;
 import com.uteg.compilers.validations.modifiers.AccessModifiersValidations;
@@ -37,6 +38,7 @@ public class Main {
             List<Boolean> accessModifiersValidation = AccessModifiersValidations.validate(wordToValidate); // Performing the Access Modifiers validations
             List<Boolean> nonAccessModifiersValidations = NonAccessModifiersValidations.validate(wordToValidate); // Performing the Non Access Modifiers validations
             List<Boolean> reservedWordsValidation = ReservedWordsValidation.validate(wordToValidate); // Performing the Reserved Words validations
+            List<Boolean> numbersValidation = NumbersValidation.validate(wordToValidate); // Performing the Numbers validations
 
             // Create a boolean list with all the validations
             List<Boolean> allLexicalValidations = Arrays.asList(
@@ -48,7 +50,8 @@ public class Main {
                     conditionalValidations.contains(true),
                     accessModifiersValidation.contains(true),
                     nonAccessModifiersValidations.contains(true),
-                    reservedWordsValidation.contains(true)
+                    reservedWordsValidation.contains(true),
+                    numbersValidation.contains(true)
             );
 
 
