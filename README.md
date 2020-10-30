@@ -76,7 +76,66 @@ A continuacion se presenta los alcances de este programa para la validacion lexi
 | ?        | variable x = (expression) ? value if true : value if false |
 | :        | variable x = (expression) ? value if true : value if false |
 
+## Modificadores de Acceso
 
+| Modificador |
+|-------------|
+| default     |
+| public      |
+| private     |
+| protected   |
+
+## Palabras Reservadas
+
+| Palabras Reservadas |
+|---------------------|
+| assert              |
+| boolean             |
+| break               |
+| byte                |
+| case                |
+| catch               |
+| char                |
+| class               |
+| const               |
+| continue            |
+| default             |
+| do                  |
+| double              |
+| else                |
+| enum                |
+| extends             |
+| false               |
+| final               |
+| finally             |
+| float               |
+| for                 |
+| goto                |
+| if                  |
+| implements          |
+| import              |
+| instanceof          |
+| interface           |
+| int                 |
+| long                |
+| native              |
+| new                 |
+| null                |
+| package             |
+| return              |
+| short               |
+| String              |
+| super               |
+| switch              |
+| synchronized        |
+| this                |
+| throw               |
+| throws              |
+| transient           |
+| true                |
+| false               |
+| try                 |
+| void                |
 
 # Profesora
 
@@ -90,3 +149,9 @@ A continuacion se presenta los alcances de este programa para la validacion lexi
 
 - Humberto Israel Perez Rodriguez
 - Juan Carlos Navarro Borunda
+
+# Referencias:
+
+- https://www.tutorialspoint.com/java/java_basic_syntax.htm
+- https://www.tutorialspoint.com/java/java_basic_syntax.htm
+- https://javadesdecero.es/fundamentos/identificadores-y-palabras-reservadas/
