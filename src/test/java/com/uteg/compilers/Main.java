@@ -29,6 +29,7 @@ public class Main {
             if(wordToValidate.startsWith("//")) // Ignore the comments
                 continue;
 
+            // Step 1: validate if the wordToValidate is in the following category:
             List<Boolean> arithmeticValidations = ArithmeticValidations.validate(wordToValidate); // Performing the arithmetic validations
             List<Boolean> relationalValidations = RelationalValidations.validate(wordToValidate); // Performing the relational validations
             List<Boolean> bitwiseValidations = BitwiseValidations.validate(wordToValidate); // Performing the bitwise validations
@@ -40,7 +41,8 @@ public class Main {
             List<Boolean> reservedWordsValidation = ReservedWordsValidation.validate(wordToValidate); // Performing the Reserved Words validations
             List<Boolean> numbersValidation = NumbersValidation.validate(wordToValidate); // Performing the Numbers validations
 
-            // Create a boolean list with all the validations
+
+            // Step 2: create a boolean list with all the validations
             List<Boolean> allLexicalValidations = Arrays.asList(
                     arithmeticValidations.contains(true),
                     relationalValidations.contains(true),
@@ -55,7 +57,7 @@ public class Main {
             );
 
 
-            // Verify if the current word/character pass the lexical validations
+            // Step 3: verify if the current word/character pass the lexical validations
             if(!allLexicalValidations.contains(true)){
                 System.out.printf("(Error) - The word/character: (%s), did not pass the lexical analysis%n", wordToValidate);
             }
