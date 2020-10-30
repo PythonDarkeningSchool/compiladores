@@ -15,39 +15,19 @@ public class Numbers {
         this.token = token;
     }
 
-    /** Returns true if the word to be evaluated belongs to the 'byte' numbers */
-    public boolean isByte(){
-
-        try {
-            Byte.parseByte(token);
-            System.out.printf("The word/character typed: (%s), it is an 'byte'%n", token);
-            return true;
-        }
-        catch (Exception ignored){
-            return false;
-        }
-    }
-
-    /** Returns true if the word to be evaluated belongs to the 'short' numbers */
-    public boolean isShort(){
-
-        try {
-            Short.parseShort(token);
-            System.out.printf("The word/character typed: (%s), it is a 'short'%n", token);
-            return true;
-        }
-        catch (Exception ignored){
-            return false;
-        }
-    }
-
     /** Returns true if the word to be evaluated belongs to the 'int' numbers */
     public boolean isInt(){
 
         try {
-            Integer.parseInt(token);
-            System.out.printf("The word/character typed: (%s), it is an 'int'%n", token);
-            return true;
+            int number = Integer.parseInt(token);
+
+            if(number < 2147483647){
+                System.out.printf("The word/character typed: (%s), it is an 'int'%n", token);
+                return true;
+            }
+
+            return false;
+
         }
         catch (Exception ignored){
             return false;
@@ -58,9 +38,14 @@ public class Numbers {
     public boolean isLong(){
 
         try {
-            Long.parseLong(token);
-            System.out.printf("The word/character typed: (%s), it is a 'long'%n", token);
-            return true;
+            long number = Long.parseLong(token);
+
+            if(number < 9223372036854775807L){
+                System.out.printf("The word/character typed: (%s), it is a 'long'%n", token);
+                return true;
+            }
+
+            return false;
         }
         catch (Exception ignored){
             return false;
@@ -71,7 +56,11 @@ public class Numbers {
     public boolean isFloat(){
 
         try {
-            Float.parseFloat(token);
+            Float.parseFloat(token); // The token can be parser as number
+
+            if(!token.contains(".")) // the number does not contains a dot
+                return false;
+
             System.out.printf("The word/character typed: (%s), it is a 'float'%n", token);
             return true;
         }
@@ -84,7 +73,11 @@ public class Numbers {
     public boolean isDouble(){
 
         try {
-            Double.parseDouble(token);
+            Double.parseDouble(token); // The token can be parser as number
+
+            if(!token.contains(".")) // the number does not contains a dot
+                return false;
+
             System.out.printf("The word/character typed: (%s), it is a 'double'%n", token);
             return true;
         }

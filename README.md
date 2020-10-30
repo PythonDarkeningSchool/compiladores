@@ -137,6 +137,16 @@ A continuacion se presenta los alcances de este programa para la validacion lexi
 | try                 |
 | void                |
 
+## Numeros
+
+| Numeros | Ejemplo                        |
+|---------|--------------------------------|
+| int     | number <  2147483647           |
+| long    | number <  9223372036854775807L |
+| float   | 1.0                            |
+| double  | 25.34                          |
+| chart   | c                              |
+
 # Profesora
 
 - Susana Mejia Hernandez
@@ -154,4 +164,5 @@ A continuacion se presenta los alcances de este programa para la validacion lexi
 
 - https://www.tutorialspoint.com/java/java_basic_syntax.htm
 - https://www.tutorialspoint.com/java/java_basic_syntax.htm
-- https://javadesdecero.es/fundamentos/identificadores-y-palabras-reservadas/
+- https://javadesdecero.es/fundamentos/identificadores-y-palabras-reservadas
+- https://www.tutorialspoint.com/java/java_basic_datatypes.htm
