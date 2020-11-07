@@ -59,7 +59,39 @@ public class Main {
 
             // Step 3: verify if the current word/character pass the lexical validations
             if(!allLexicalValidations.contains(true)){
-                System.out.printf("(Error) - The word/character: (%s), did not pass the lexical analysis%n", wordToValidate);
+
+                // Step 4: if the current word/character did not pass the lexical validations, iterating over all their characters to validate again
+                char[] charList = wordToValidate.toCharArray();
+
+                for(char character: charList){
+                    arithmeticValidations = ArithmeticValidations.validate(String.valueOf(character)); // Performing the arithmetic validations
+                    relationalValidations = RelationalValidations.validate(String.valueOf(character)); // Performing the relational validations
+                    bitwiseValidations = BitwiseValidations.validate(String.valueOf(character)); // Performing the bitwise validations
+                    conditionalValidations = ConditionalValidations.validate(String.valueOf(character)); // Performing the conditional validations
+                    logicalValidations = LogicalValidations.validate(String.valueOf(character)); // Performing the logical validations
+                    assignmentValidations = AssignmentValidations.validate(String.valueOf(character)); // Performing the assignment validations
+                    accessModifiersValidation = AccessModifiersValidations.validate(String.valueOf(character)); // Performing the Access Modifiers validations
+                    nonAccessModifiersValidations = NonAccessModifiersValidations.validate(String.valueOf(character)); // Performing the Non Access Modifiers validations
+                    reservedWordsValidation = ReservedWordsValidation.validate(String.valueOf(character)); // Performing the Reserved Words validations
+                    numbersValidation = NumbersValidation.validate(String.valueOf(character)); // Performing the Numbers validations
+
+                    allLexicalValidations = Arrays.asList(
+                            arithmeticValidations.contains(true),
+                            relationalValidations.contains(true),
+                            bitwiseValidations.contains(true),
+                            logicalValidations.contains(true),
+                            assignmentValidations.contains(true),
+                            conditionalValidations.contains(true),
+                            accessModifiersValidation.contains(true),
+                            nonAccessModifiersValidations.contains(true),
+                            reservedWordsValidation.contains(true),
+                            numbersValidation.contains(true)
+                    );
+
+                    if(!allLexicalValidations.contains(true))
+                        System.out.printf("(Error) - The word/character: (%s), did not pass the lexical analysis%n", character);
+
+                }
             }
 
         }
